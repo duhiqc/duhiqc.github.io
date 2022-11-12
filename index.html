@@ -5,61 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        #ripple {
-        position: relative;
-            overflow: hidden;
-            margin: auto;
-            padding: 1rem 2rem;
-            color: #fff;
-            background: #579aff;
-            font-family: "Roboto", sans-serif;
-            border-radius: 0.25rem;
-            box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
-            outline: 0;
-            border: 0;
-            cursor: pointer;
-        }
-
-        span.ripple {
-            position: absolute;
-            border-radius: 50%;
-            transform: scale(0);
-            opacity: 1;
-            background-color: rgba(255, 255, 255, 0.7);
-            animation: ripple 450ms linear;
-        }
-
-        @keyframes ripple {
-        to {
-                transform: scale(7);
-                opacity: 0;
-            }
-        }
-    </style>
 </head>
 <body>
-    <button id="ripple" onclick="submit()">HELLOWORLD!</button>
-    <script>
-         var createRipple=function (event) {
-            const button = event.currentTarget;
-            const rippleSize = Math.max(button.clientWidth, button.clientHeight)
-            const moved = rippleSize / 2;
-            const circle = document.createElement("span")
-            circle.style.width = circle.style.height = `${rippleSize}px`
-            circle.style.top = `${event.clientY - button.offsetTop - moved}px`
-            circle.style.left = `${event.clientX - button.offsetLeft - moved}px`
-            circle.classList.add("ripple")
-            const isExist = button.getElementsByClassName("ripple")[0]
-            if (isExist) {
-                isExist.remove()
-            }
-            button.append(circle)
-        }
-        document.getElementById("ripple").addEventListener("click", createRipple)
-        function submit(){
-            console.log("按钮被点击")
-        }
-    </script>
+    
 </body>
 </html>
